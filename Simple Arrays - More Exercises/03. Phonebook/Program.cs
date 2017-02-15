@@ -20,7 +20,7 @@ namespace _03.Phonebook
 
                 for (int i = 0; i < names.Length; i++)
                 {
-                    if(input == names[i])
+                    if (input == names[i])
                     {
                         Console.WriteLine($"{names[i]} -> {phoneNumbers[i]}");
                     }
