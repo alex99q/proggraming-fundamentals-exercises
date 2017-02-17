@@ -19,7 +19,10 @@ namespace _04.Phone
             {
                 input = Console.ReadLine().Split();
                 string command = input[0];
-                string numberOrName = input[1];
+                string numberOrName = string.Empty;
+
+                if (input[0] != "done")
+                numberOrName = input[1];
 
                 for (int i = 0; i < names.Length; i++)
                 {
@@ -45,8 +48,14 @@ namespace _04.Phone
                         {
                             int minutes = result / 60;
                             int seconds = result % 60;
-                            DateTime dt = new DateTime((seconds * 10000 * 1000));
-                            string duration = dt.ToString("mm:ss");
+                            string duration = string.Empty;
+
+                            if (seconds < 10 && minutes < 10)
+                                duration = $"0{minutes}:0{seconds}";
+                            else if (minutes < 10)
+                                duration = $"0{minutes}:{seconds}";
+                            else if (seconds < 10)
+                                duration = $"{minutes}:0{seconds}";
 
                             Console.WriteLine($"call ended. duration: {duration}");
                         }
