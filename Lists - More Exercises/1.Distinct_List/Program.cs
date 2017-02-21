@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
-namespace Distinct_List
+﻿namespace Distinct_List
 {
-	class MainClass
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+
+    class MainClass
 	{
-		public static void Main(string[] args)
+		public static void Main()
 		{
 			List<int> input = Console.ReadLine().Split(' ').Select(int.Parse).ToList();
 
@@ -18,9 +18,16 @@ namespace Distinct_List
 
 				if (input.Contains(currentNumber))
 				{
-					
+					while (input.Contains(currentNumber))
+                    {
+                        input.Remove(currentNumber);
+                    }
 				}
+
+                input.Insert(i, currentNumber);
 			}
+
+            Console.WriteLine(string.Join(" ", input));
 		}
 	}
 }

@@ -79,14 +79,23 @@
                 }
             }
 
-            for (int i = 0, j = 0; i < secondLine.Count; i++, j += 2)
+            for (int i = 0, j = 0; i < secondLine.Count; i++, j+= 2)
             {
                 if (firstLine.Count == 0)
                 {
                     firstLine = secondLine;
                     break;
                 }
-                firstLine.Insert(j,secondLine[i]);
+                try
+                {
+                    firstLine.Insert(j, secondLine[i]);
+                }
+                catch (System.ArgumentOutOfRangeException)
+                {
+                    j--;
+                    firstLine.Insert(j, secondLine[i]);
+                }
+
             }
 
             Console.WriteLine(string.Join(" ", firstLine));
