@@ -24,7 +24,9 @@ namespace _1.Last_3_Consecutive_Equal_Strings
                 }
             }
 
-            Console.WriteLine(string.Join(" ", result));
+			Console.WriteLine(string.Join(" ", result));
+
+			
         }
     }
 }
