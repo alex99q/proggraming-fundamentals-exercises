@@ -18,8 +18,8 @@ namespace _3.Camel_s_Back
             if (M != N.Count)
             {
 
-                int currentCount = N.Count;
-                for (int i = 0; i < (currentCount - M) / 2; i++)
+                int countOfN = N.Count;
+                for (int i = 0; i < (countOfN - M) / 2; i++)
                 {
                     N.RemoveAt(0);
                     N.RemoveAt(N.Count - 1);
