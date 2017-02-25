@@ -10,6 +10,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3. Camel's Back", "3. Camel
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "4. Ununion Lists", "4. Ununion Lists\4. Ununion Lists.csproj", "{E3660429-49E4-4CE8-820A-840D59A98912}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "5. Note Statistics", "5. Note Statistics\5. Note Statistics.csproj", "{5245C095-05CB-472A-920F-386072D858A2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -48,6 +50,14 @@ Global
 		{E3660429-49E4-4CE8-820A-840D59A98912}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E3660429-49E4-4CE8-820A-840D59A98912}.Release|x86.ActiveCfg = Release|Any CPU
 		{E3660429-49E4-4CE8-820A-840D59A98912}.Release|x86.Build.0 = Release|Any CPU
+		{5245C095-05CB-472A-920F-386072D858A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5245C095-05CB-472A-920F-386072D858A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5245C095-05CB-472A-920F-386072D858A2}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{5245C095-05CB-472A-920F-386072D858A2}.Debug|x86.Build.0 = Debug|Any CPU
+		{5245C095-05CB-472A-920F-386072D858A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5245C095-05CB-472A-920F-386072D858A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5245C095-05CB-472A-920F-386072D858A2}.Release|x86.ActiveCfg = Release|Any CPU
+		{5245C095-05CB-472A-920F-386072D858A2}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
