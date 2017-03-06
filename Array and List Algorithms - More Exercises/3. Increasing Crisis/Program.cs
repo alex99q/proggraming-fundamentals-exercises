@@ -9,162 +9,47 @@
         static void Main(string[] args)
         {
             int n = int.Parse(Console.ReadLine());
-            List<int> numbers = new List<int>();
+            List<int> resultingList = new List<int>();
 
             for (int i = 0; i < n; i++)
             {
-                List<int> numbersToInsert = Console.ReadLine().Split(' ').Select(int.Parse).ToList();
-                List<int> sortedNumbersToInsert = new List<int>();
+                List<int> numbersToInsert = Console.ReadLine().Split().Select(int.Parse).ToList();
 
-                sortedNumbersToInsert = AddItemsToList(sortedNumbersToInsert, numbersToInsert);
-                sortedNumbersToInsert.Sort();
-
-                bool inserted = false;
-                bool alreadyInserted = false;
-
-                List<int> increasingSequenceOfNumbersToInsert = new List<int>();
-
-                if (numbersToInsert.SequenceEqual(sortedNumbersToInsert))
+                if (resultingList.Count == 0)
                 {
-                    if (i == 0)
-                    {
-                        numbers.AddRange(numbersToInsert);
-                    }
-                    else
-                    {
-                        numbers = GetNumbersToInsert(numbers, inserted, numbersToInsert);
-                    }
+                    resultingList = new List<int>(numbersToInsert);
                 }
+
                 else
                 {
-                    if (i == 0)
+                    for (int j = 0; j < numbersToInsert.Count - 1; j++)
                     {
-                        numbers = GetOnlyIncreasingSequenceOfNumbersToInsert(numbersToInsert, increasingSequenceOfNumbersToInsert, alreadyInserted);
-                    }
-                    else
-                    {
-                        increasingSequenceOfNumbersToInsert = GetOnlyIncreasingSequenceOfNumbersToInsert(numbersToInsert, increasingSequenceOfNumbersToInsert, alreadyInserted);
-
-                        numbers = InsertIncreasingSequenceToNumbers(numbers, inserted, increasingSequenceOfNumbersToInsert);
-                    }
-                }
-            }
-
-            Console.WriteLine(string.Join(" ", numbers));
-        }
-
-        static List<int> AddItemsToList(List<int> sortedList, List<int> sortedNumbersToInsert)
-        {
-            for (int o = 0; o < sortedNumbersToInsert.Count; o++)
-            {
-                sortedList.Add(sortedNumbersToInsert[o]);
-            }
-
-            return sortedList;
-        }
-
-        static List<int> GetNumbersToInsert(List<int> numbers, bool inserted, List<int> numbersToInsert)
-        {
-            for (int index = numbers.Count - 1; index >= 0; index--)
-            {
-                if (inserted)
-                {
-                    break;
-                }
-
-                int currentNumber = numbers[index];
-
-                for (int j = 0; j < numbersToInsert.Count; j++)
-                {
-                    int currentNumberToInsert = numbersToInsert[j];
-
-                    if (currentNumber <= currentNumberToInsert)
-                    {
-                        numbers.InsertRange(index + 1, numbersToInsert);
-                        inserted = true;
-                        break;
-                    }
-                }
-            }
-
-            return numbers;
-        }
-
-        static List<int> GetOnlyIncreasingSequenceOfNumbersToInsert(List<int> numbersToInsert, List<int> increasingSequenceOfNumbersToInsert, bool alreadyInserted)
-        {
-            for (int k = 0; k < numbersToInsert.Count - 1; k++)
-            {
-                if (numbersToInsert[k] <= numbersToInsert[k + 1])
-                {
-                    if (alreadyInserted == false)
-                    {
-                        increasingSequenceOfNumbersToInsert.Add(numbersToInsert[k]);
-                    }
-                    increasingSequenceOfNumbersToInsert.Add(numbersToInsert[k + 1]);
-                    alreadyInserted = true;
-                }
-                else
-                {
-                    if (alreadyInserted == false)
-                    {
-                        increasingSequenceOfNumbersToInsert.Add(numbersToInsert[0]);
-                    }
-                    break;
-                }
-            }
-
-            return increasingSequenceOfNumbersToInsert;
-        }
-
-        static List<int> InsertIncreasingSequenceToNumbers(List<int> numbers, bool inserted, List<int> increasingSequenceOfNumbersToInsert)
-        {
-            for (int k = numbers.Count - 1; k >= 0; k--)
-            {
-                if (inserted)
-                {
-                    break;
-                }
-
-                int currentNumber = numbers[k];
-
-                for (int j = 0; j < increasingSequenceOfNumbersToInsert.Count; j++)
-                {
-                    int currentNumberToInsert = increasingSequenceOfNumbersToInsert[j];
-
-                    if (currentNumber <= currentNumberToInsert)
-                    {
-                        if (k == numbers.Count - 1)
+                        if (numbersToInsert[j] > numbersToInsert[j + 1])
                         {
-                            numbers.AddRange(increasingSequenceOfNumbersToInsert);
+                            numbersToInsert.RemoveRange(j + 1, Math.Max(j + 1, numbersToInsert.Count) - Math.Min(j + 1, numbersToInsert.Count));
+                        }
+                    }
 
-                            inserted = true;
+                    for (int indexOfResultingList = resultingList.Count - 1; indexOfResultingList > 0; indexOfResultingList--)
+                    {
+                        if (resultingList[indexOfResultingList] <= numbersToInsert[0])
+                        {
+                            resultingList.InsertRange(indexOfResultingList + 1, numbersToInsert);
                             break;
                         }
-                        else
+                    }
+
+                    for (int j = 0; j < resultingList.Count - 1; j++)
+                    {
+                        if (resultingList[j] > resultingList[j + 1])
                         {
-                            List<int> copyOfNumbers = new List<int>();
-
-                            for (int i = 0; i < numbers.Count; i++)
-                            {
-                                copyOfNumbers.Add(i);
-                            }
-
-                            int indexToRemove = k + 1;
-
-                            for (int p = k + 1; p <= copyOfNumbers.Count - 1; p++)
-                            {
-                                numbers.RemoveAt(indexToRemove);
-                            }
-
-                            numbers.AddRange(increasingSequenceOfNumbersToInsert);
-
-                            inserted = true;
-                            break;
+                            resultingList.RemoveRange(j + 1, Math.Max(resultingList.Count, j + 1) - Math.Min(resultingList.Count, j + 1));
                         }
                     }
                 }
             }
-            return numbers;
+
+            Console.WriteLine(string.Join(" ", resultingList));
         }
     }
 }
