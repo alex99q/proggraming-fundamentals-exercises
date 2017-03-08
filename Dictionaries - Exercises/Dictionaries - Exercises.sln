@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3. Mixed Phones", "3. Mixed
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "4. Exam Shopping", "4. Exam Shopping\4. Exam Shopping.csproj", "{E10EBC5D-8167-4535-990F-D3269733FECE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "5. User Logins", "5. User Logins\5. User Logins.csproj", "{AD17076C-1BD0-449C-B100-5253071D620E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "6. Filter Base", "6. Filter Base\6. Filter Base.csproj", "{D99ABDF0-D711-4402-B0F9-58D94CDA44DC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{E10EBC5D-8167-4535-990F-D3269733FECE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E10EBC5D-8167-4535-990F-D3269733FECE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E10EBC5D-8167-4535-990F-D3269733FECE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD17076C-1BD0-449C-B100-5253071D620E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD17076C-1BD0-449C-B100-5253071D620E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD17076C-1BD0-449C-B100-5253071D620E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD17076C-1BD0-449C-B100-5253071D620E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D99ABDF0-D711-4402-B0F9-58D94CDA44DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D99ABDF0-D711-4402-B0F9-58D94CDA44DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D99ABDF0-D711-4402-B0F9-58D94CDA44DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D99ABDF0-D711-4402-B0F9-58D94CDA44DC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

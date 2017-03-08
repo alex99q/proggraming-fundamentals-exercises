@@ -8,7 +8,7 @@ namespace _4.Exam_Shopping
         static void Main(string[] args)
         {
             Dictionary<string, int> stock = new Dictionary<string, int>();
-
+            
             string input = Console.ReadLine();
 
             while(input != "exam time")
@@ -38,11 +38,18 @@ namespace _4.Exam_Shopping
                 {
                     if (stock.ContainsKey(product))
                     {
-                        stock[product] -= quantity;
-
-                        if (stock[product] <= 0)
+                        if (stock[product] == 0)
                         {
-                            stock.Remove(product);
+                            Console.WriteLine($"{product} out of stock");
+                        }
+                        else
+                        {
+                            stock[product] -= quantity;
+
+                            if (stock[product] < 0)
+                            {
+                                stock[product] = 0;
+                            }
                         }
                     }
 
@@ -60,6 +67,10 @@ namespace _4.Exam_Shopping
                 string product = productQuantityPair.Key;
                 int quantity = productQuantityPair.Value;
 
+                if (quantity <= 0)
+                {
+                    continue;
+                }
                 Console.WriteLine($"{product} -> {quantity}");
             }
         }
