@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace Rectangle_Position
 {
@@ -6,12 +7,11 @@ namespace Rectangle_Position
 	{
 		public static void Main(string[] args)
 		{
-			var ok = new Rectagle();
-			ok.Top = 4;
-			ok.Left = -3;
-			ok.Width = 4;
-			ok.Top = 6;
-		}
+            Rectagle r1 = Rectagle.ReadRectangle();
+            Rectagle r2 = Rectagle.ReadRectangle();
+
+            Console.WriteLine(r1.IsInside(r2));
+        }
 	}
 
 	public class Rectagle
@@ -24,23 +24,43 @@ namespace Rectangle_Position
 
 		public double Height { get; set; }
 
-		public double Right { get; set;}
+		public double Bottom
+        {
+            get
+            {
+                return Top + Width;
+            }
+        }
 
-		public double Bottom { get; set; }
+        public double Right
+        {
+            get
+            {
+                return Left + Height;
+            }
+        }
 
-		public void GetSecondPoint()
-		{
-			Right = Top + Width;
+        public string IsInside(Rectagle r2)
+        {
+            if (Left >= r2.Left && Right <= r2.Right && Top >= r2.Top && Bottom <= r2.Bottom)
+            {
+                return "Inside";
+            }
 
-			Bottom = Left + Height;
-		}
+            return "Not Inside";
+        }
 
-		public bool isInside(Rectagle r2)
-		{
-			if (Left >= r2.Left && Rigth <= r2.Right)
-			{
-				 
-			}
-		}
-	}
+        public static Rectagle ReadRectangle()
+        {
+            int[] rectangleParameters = Console.ReadLine().Split(' ').Select(int.Parse).ToArray();
+
+            return new Rectagle
+            {
+                Top = rectangleParameters[0],
+                Left = rectangleParameters[1],
+                Width = rectangleParameters[2],
+                Height = rectangleParameters[3]
+            };
+        }
+    }
 }
