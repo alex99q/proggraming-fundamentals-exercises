@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace _6.Messages
 {
@@ -35,7 +36,7 @@ namespace _6.Messages
                 {
                     string name = inputTokens[1];
 
-                    users[name] = new User { Username = name };
+                    users[name] = new User { Username = name, RecievedMessages = new List<Message>()};
                 }
                 else
                 {
@@ -47,12 +48,12 @@ namespace _6.Messages
                     {
                         try
                         {
-                            users[senderUsername].RecievedMessages.Add(new Message { Content = content });
+                            users[recipientUsername].RecievedMessages.Add(new Message { Content = content, Sender = users[senderUsername]});
                         }
                         catch (System.NullReferenceException)
                         {
-                            users[senderUsername].RecievedMessages = new List<Message>();
-                            users[senderUsername].RecievedMessages.Add(new Message { Content = content });
+                            users[recipientUsername].RecievedMessages = new List<Message>();
+                            users[recipientUsername].RecievedMessages.Add(new Message { Content = content, Sender = users[senderUsername] });
                         }
 
                         hasMessages = true;
@@ -66,32 +67,31 @@ namespace _6.Messages
 
             string[] inputParameters = input.Split(' ');
 
-            string sender = inputParameters[0];
-            string recipient = inputParameters[1];
+            string firstUser = inputParameters[0];
+            string secondUser = inputParameters[1];
 
 
-            if (hasMessages == true && users.ContainsKey(sender) && users.ContainsKey(recipient))
+            if (hasMessages == true && users.ContainsKey(firstUser) && users.ContainsKey(secondUser))
             {
-                for (int i = 0; i < Math.Max(users[sender].RecievedMessages.Count, users[recipient].RecievedMessages.Count); i++)
+                for (int i = 0; i < Math.Max(users[firstUser].RecievedMessages.Count, users[secondUser].RecievedMessages.Count); i++)
                 {
 
                     try
                     {
-                        var senderMessage = users[sender].RecievedMessages[i];
-                        Console.WriteLine($"{sender}: {senderMessage.Content}");
+                        string firstMessage = users.Values.Where(x => x.Username == secondUser).SelectMany(x => x.RecievedMessages).Where(x => x.Sender.Username == firstUser).Select(x => x.Content).ToList()[i];
+
+                        Console.WriteLine($"{firstUser}: {firstMessage}");
                     }
-                    catch (System.ArgumentOutOfRangeException)
-                    {
-                    }
+                    catch (System.ArgumentOutOfRangeException){}
 
                     try
                     {
-                        var recipientMessage = users[recipient].RecievedMessages[i];
-                        Console.WriteLine($"{recipientMessage.Content} :{recipient}");
+                        string secondMessage = users.Values.Where(x => x.Username == firstUser).SelectMany(x => x.RecievedMessages).Where(x => x.Sender.Username == secondUser).Select(x => x.Content).ToList()[i];
+
+                        Console.WriteLine($"{secondMessage} :{secondUser}");
+
                     }
-                    catch (System.ArgumentOutOfRangeException)
-                    {
-                    }
+                    catch (System.ArgumentOutOfRangeException){}
                 }
             }
             else

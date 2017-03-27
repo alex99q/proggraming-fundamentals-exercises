@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1. Odd Lines", "1. Odd Lines\1. Odd Lines.csproj", "{096F44F6-46D1-49CC-B7DB-8D16E51EFD26}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2. Line Numbers", "2. Line Numbers\2. Line Numbers.csproj", "{B044365C-AAFB-44F7-8CAD-E88982311569}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3. Word Count", "3. Word Count\3. Word Count.csproj", "{C2F446CE-9433-4B3C-A5E5-44195C26C601}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{096F44F6-46D1-49CC-B7DB-8D16E51EFD26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{096F44F6-46D1-49CC-B7DB-8D16E51EFD26}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{096F44F6-46D1-49CC-B7DB-8D16E51EFD26}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{096F44F6-46D1-49CC-B7DB-8D16E51EFD26}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B044365C-AAFB-44F7-8CAD-E88982311569}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B044365C-AAFB-44F7-8CAD-E88982311569}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B044365C-AAFB-44F7-8CAD-E88982311569}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B044365C-AAFB-44F7-8CAD-E88982311569}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2F446CE-9433-4B3C-A5E5-44195C26C601}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2F446CE-9433-4B3C-A5E5-44195C26C601}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2F446CE-9433-4B3C-A5E5-44195C26C601}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2F446CE-9433-4B3C-A5E5-44195C26C601}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
