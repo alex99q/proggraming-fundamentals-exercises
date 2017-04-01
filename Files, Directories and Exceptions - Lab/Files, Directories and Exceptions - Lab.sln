@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3. Word Count", "3. Word Co
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "4.Merge_Files", "4.Merge_Files\4.Merge_Files.csproj", "{EDB218A1-2561-470C-8634-611BA994B545}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "5. Folder Size", "5. Folder Size\5. Folder Size.csproj", "{D1AF53E1-A720-439E-AFDD-E35BE6DA1A67}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{EDB218A1-2561-470C-8634-611BA994B545}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EDB218A1-2561-470C-8634-611BA994B545}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EDB218A1-2561-470C-8634-611BA994B545}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1AF53E1-A720-439E-AFDD-E35BE6DA1A67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1AF53E1-A720-439E-AFDD-E35BE6DA1A67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1AF53E1-A720-439E-AFDD-E35BE6DA1A67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1AF53E1-A720-439E-AFDD-E35BE6DA1A67}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
