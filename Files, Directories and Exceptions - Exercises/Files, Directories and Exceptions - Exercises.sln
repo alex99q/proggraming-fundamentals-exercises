@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1. Filter Extensions", "1. 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2. HTML Contents", "2. HTML Contents\2. HTML Contents.csproj", "{A4487325-FB99-4E69-A598-7B8676970F87}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3. User Database", "3. User Database\3. User Database.csproj", "{CD9C183D-137E-45FC-A9B4-36A4A9DEA3BA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "4. Re-Directory", "4. Re-Directory\4. Re-Directory.csproj", "{7CBC1266-6DED-4CB5-8234-1B3754535365}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{A4487325-FB99-4E69-A598-7B8676970F87}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A4487325-FB99-4E69-A598-7B8676970F87}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A4487325-FB99-4E69-A598-7B8676970F87}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD9C183D-137E-45FC-A9B4-36A4A9DEA3BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD9C183D-137E-45FC-A9B4-36A4A9DEA3BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD9C183D-137E-45FC-A9B4-36A4A9DEA3BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD9C183D-137E-45FC-A9B4-36A4A9DEA3BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7CBC1266-6DED-4CB5-8234-1B3754535365}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CBC1266-6DED-4CB5-8234-1B3754535365}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CBC1266-6DED-4CB5-8234-1B3754535365}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CBC1266-6DED-4CB5-8234-1B3754535365}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
