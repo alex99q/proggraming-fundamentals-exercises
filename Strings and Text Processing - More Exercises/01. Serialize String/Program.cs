@@ -10,7 +10,9 @@ namespace _01.Serialize_String
     {
         static void Main(string[] args)
         {
+            string input = Console.ReadLine();
 
+            HashSet<>
         }
     }
 }
