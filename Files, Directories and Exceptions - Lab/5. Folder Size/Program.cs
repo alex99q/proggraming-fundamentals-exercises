@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 
 namespace _5.Folder_Size
 {
@@ -18,6 +19,8 @@ namespace _5.Folder_Size
             }
 
             string sumSizeinMB = (sumSize / 1024 / 1024).ToString();
+
+			Console.WriteLine("ok");
 
             File.WriteAllText("../../../Resources/05. Folder Size/TestFolder/Size Of TestFolder.txt", sumSizeinMB);
         }
