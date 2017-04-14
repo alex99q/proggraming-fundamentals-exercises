@@ -10,7 +10,7 @@ namespace Cards
 		{
 			string input = Console.ReadLine();
 
-			string pattern = @"([1]?[2-9JQKA])([SHDC])";
+			string pattern = @"([1]?[0-9JQKA])([SHDC])";
 
 			Regex rx = new Regex(pattern);
 
