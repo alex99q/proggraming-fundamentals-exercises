@@ -38,14 +38,14 @@ namespace _04.Roli_The_Coder
                     .Select(n => n.TrimStart('@'))
                     .ToList();
 
-                IdEventDict[ID] = eventName;
-
                 if (!eventsDict.ContainsKey(ID))
                 {
                     eventsDict[ID] = new Dictionary<string, List<string>>();
+
+                    IdEventDict[ID] = eventName;
                 }
 
-                if (eventsDict[ID = ])
+                if (IdEventDict[ID] == eventName)
                 {
                     if (!eventsDict[ID].ContainsKey(eventName))
                     {
@@ -60,8 +60,23 @@ namespace _04.Roli_The_Coder
                         }
                     }
                 }
+                else
+                {
+                    input = Console.ReadLine();
+                    continue;
+                }
+
+                eventsDict[ID] = eventsDict[ID]
+                    .OrderByDescending(n => n.Value.Count)
+                    .ThenBy(n => n)
+                    .ToDictionary(n => n.Key, n => new List<string>(n.Value));
 
                 input = Console.ReadLine();
+            }
+
+            foreach (var eventParticipantsPair in eventsDict)
+            {
+                string eventName = eventParticipantsPair.Key;
             }
         }
     }
